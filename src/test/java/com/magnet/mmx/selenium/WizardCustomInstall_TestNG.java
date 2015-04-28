@@ -14,7 +14,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-
 public class WizardCustomInstall_TestNG {
 //  private static float  = null;
 private WebDriver driver;
@@ -233,7 +232,8 @@ public void setUp() throws Exception {
 //	    driver.findElement(By.linkText("Profile")).click();Thread.sleep(3000);
 //	    driver.findElement(By.cssSelector(".show-profile-btn")).click();Thread.sleep(2000);
 //	    assertTrue(isElementPresent(By.xpath(".//*[@id='user-profile-modal']/div/div/div[1]/h4")));
-        System.out.println("asserted User profile entry page");
+	    assertEquals("admin@test.com", driver.findElement(By.cssSelector("span.placeholder-username")).getText());
+	    System.out.println("asserted User profile entry page");
         
 	    driver.findElement(By.cssSelector("div.col-sm-6 > input[name=\"firstName\"]")).clear();
 	    driver.findElement(By.cssSelector("div.col-sm-6 > input[name=\"firstName\"]")).sendKeys("admin");Thread.sleep(3000);
@@ -252,7 +252,13 @@ public void setUp() throws Exception {
   
   
   
-  private void fail(String string) {
+  private void assertEquals(String string, String text) {
+	// TODO Auto-generated method stub
+	
+}
+
+
+private void fail(String string) {
 		// TODO Auto-generated method stub
 		
 	}
